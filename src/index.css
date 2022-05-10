@@ -4,6 +4,11 @@
   box-sizing: border-box;
 }
 
+p, h3 {
+  margin: 0;
+  padding: 0;
+}
+
 body {
   background-color: #8BC6EC;
   /* background-image: linear-gradient(135deg, #8BC6EC 0%, #9599E2 100%); */
@@ -12,11 +17,126 @@ body {
   font-family: "Lato", sans-serif;
   margin: 0;
   text-align: center;
+  
 }
 
 #root {
   display: flex;
-  margin: 100px auto;
+  margin: 0px auto;
   align-items: center;
   justify-content: center;
+}
+
+.container {
+  margin: 20px auto;
+  width: 60%;
+}
+
+.App >h3 {
+  text-align: left;
+  font-size: 25px;
+}
+.total {
+  background-color: rgba(255, 255, 255, 0.555);
+  display: flex;
+  justify-content: space-around;
+  border-radius: 5px;
+  font-size: 20px;
+  -webkit-box-shadow: 3px 8px 8px -3px rgba(34, 60, 80, 0.2);
+  -moz-box-shadow: 3px 8px 8px -3px rgba(34, 60, 80, 0.2);
+  box-shadow: 3px 8px 8px -3px rgba(34, 60, 80, 0.2);
+  padding: 10px 20px;
+}
+
+.total__income {
+  color: green;
+  padding-top: 10px;
+}
+.total__expense {
+  color: red;
+  padding-top: 10px;
+
+}
+.history {
+  margin-top: 40px;
+}
+.history h2 {
+  text-align: left;
+  font-size: 20px;
+}
+.history__item {
+  display: flex;
+  justify-content: space-between;
+  border-radius: 5px;
+  margin-top: 5px;
+  -webkit-box-shadow: 3px 8px 8px -3px rgba(34, 60, 80, 0.2);
+  -moz-box-shadow: 3px 8px 8px -3px rgba(34, 60, 80, 0.2);
+  box-shadow: 3px 8px 8px -3px rgba(34, 60, 80, 0.2);
+  background-color: rgba(255, 255, 255, 0.555);
+  padding: 10px 20px;
+}
+
+.plus {
+  border-right: 15px solid green;
+}
+.minus {
+  border-right: 15px solid red;
+}
+
+.transaction__input {
+  margin-top: 15px;
+}
+
+input {
+  border-radius: 5px;
+  border: none;
+  padding: 10px;
+  margin-top: 5px;
+  width: 100%;
+  background-color: rgba(255, 255, 255, 0.555);
+  -webkit-box-shadow: 3px 8px 8px -3px rgba(34, 60, 80, 0.2);
+  -moz-box-shadow: 3px 8px 8px -3px rgba(34, 60, 80, 0.2);
+  box-shadow: 3px 8px 8px -3px rgba(34, 60, 80, 0.2);
+}
+
+input:focus, textarea:focus, select:focus {
+  outline: none !important;
+}
+
+button {
+  margin-top: 10px;
+  padding: 10px;
+  width: 100%;
+  border-radius: 5px;
+  border: none;
+  background: #9599E2;
+  -webkit-box-shadow: 3px 8px 8px -3px rgba(34, 60, 80, 0.2);
+  -moz-box-shadow: 3px 8px 8px -3px rgba(34, 60, 80, 0.2);
+  box-shadow: 3px 8px 8px -3px rgba(34, 60, 80, 0.2);
+  /* background-color: rgba(218, 106, 220, 0.597); */
+  background-color: yellowgreen;
+  font-size: 15px;
+}
+
+.transaction h2,h3 {
+  text-align: left;
+}
+
+.transaction h3 {
+  font-size: 15px;
+}
+
+@media  (max-width: 900px) {
+  .container {
+    width: 75%;
+  }
+}
+
+@media  (max-width: 600px) {
+  .transaction h3 {
+    font-size: 13px;
+  }
+  .container {
+    width: 95%;
+  }
 }
