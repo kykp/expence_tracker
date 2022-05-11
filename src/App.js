@@ -46,6 +46,10 @@ function handleIncome () {
   return income;
 }
 
+const onDeleteItem = (element) =>{
+  console.log(element)
+}
+
 useEffect(() => {
   setBalance(summ)
   setExpence(handleExpense)
@@ -90,7 +94,7 @@ const handleSubmit = (event) => {
         </div>
       </div>
 
-     <History data={data}/>
+     <History data={data} onDeleteItem={onDeleteItem}/>
 
       <form className="transaction container">
         <h2>Add New Transaction</h2>
