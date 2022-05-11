@@ -10,8 +10,8 @@ p, h3 {
 }
 
 body {
-  background-color: #8BC6EC;
-  /* background-image: linear-gradient(135deg, #8BC6EC 0%, #9599E2 100%); */
+  background-color: #30a3ef;
+  background-image: linear-gradient(135deg, #8BC6EC 0%, #9599E2 100%);
   background-repeat: no-repeat;
   margin: 0;
   font-family: "Lato", sans-serif;
@@ -37,7 +37,7 @@ body {
   font-size: 25px;
 }
 .total {
-  background-color: rgba(255, 255, 255, 0.555);
+  background-color: rgba(255, 255, 255, 0.9);
   display: flex;
   justify-content: space-around;
   border-radius: 5px;
@@ -49,7 +49,7 @@ body {
 }
 
 .total__income {
-  color: green;
+  color: yellowgreen;
   padding-top: 10px;
 }
 .total__expense {
@@ -72,12 +72,12 @@ body {
   -webkit-box-shadow: 3px 8px 8px -3px rgba(34, 60, 80, 0.2);
   -moz-box-shadow: 3px 8px 8px -3px rgba(34, 60, 80, 0.2);
   box-shadow: 3px 8px 8px -3px rgba(34, 60, 80, 0.2);
-  background-color: rgba(255, 255, 255, 0.555);
+  background-color: rgba(255, 255, 255, 0.9);
   padding: 10px 20px;
 }
 
 .plus {
-  border-right: 15px solid green;
+  border-right: 15px solid yellowgreen;
 }
 .minus {
   border-right: 15px solid red;
@@ -87,13 +87,17 @@ body {
   margin-top: 15px;
 }
 
+.label {
+  display: flex;
+}
+
 input {
   border-radius: 5px;
   border: none;
   padding: 10px;
   margin-top: 5px;
   width: 100%;
-  background-color: rgba(255, 255, 255, 0.555);
+  background-color: rgba(255, 255, 255, 0.9);
   -webkit-box-shadow: 3px 8px 8px -3px rgba(34, 60, 80, 0.2);
   -moz-box-shadow: 3px 8px 8px -3px rgba(34, 60, 80, 0.2);
   box-shadow: 3px 8px 8px -3px rgba(34, 60, 80, 0.2);
@@ -103,7 +107,7 @@ input:focus, textarea:focus, select:focus {
   outline: none !important;
 }
 
-button {
+.transaction__submit {
   margin-top: 10px;
   padding: 10px;
   width: 100%;
@@ -121,7 +125,9 @@ button {
 .transaction h2,h3 {
   text-align: left;
 }
-
+.transaction h2 {
+  font-size: 20px;
+}
 .transaction h3 {
   font-size: 15px;
 }
