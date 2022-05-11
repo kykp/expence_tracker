@@ -27,7 +27,7 @@ function App() {
   const [value, setValue] = useState("");
   const [balance, setBalance] = useState();
   const [onExpense, setExpence] = useState();
-  const [onIncome, setIncom] = useState();
+  const [onIncome, setIncome] = useState();
 
   function summ() {
     let currentBalance = 0;
@@ -50,13 +50,22 @@ function App() {
 
   const onDeleteItem = (element) => {
     const newData = data.filter((el) => el.id !== element.id);
+
+    if (element.value > 0) {
+      setIncome(onIncome - element.value);
+      setBalance(balance - element.value);
+    } else {
+      setExpence(onExpense - element.value);
+      setBalance(balance - element.value);
+    }
+
     setData(newData);
   };
 
   useEffect(() => {
     setBalance(summ);
     setExpence(handleExpense);
-    setIncom(handleIncome);
+    setIncome(handleIncome);
   }, []);
 
   const handleSubmit = (event) => {
@@ -68,7 +77,7 @@ function App() {
     let income = false;
     if (price > 0) {
       income = true;
-      setIncom(onIncome + price);
+      setIncome(onIncome + price);
     } else {
       income = false;
       setExpence(onExpense + price);
