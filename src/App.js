@@ -1,27 +1,34 @@
 import React, { useEffect, useState } from "react";
 import { History } from "./components/History/History";
 
+const dataDB = [
+  {
+    id: 0,
+    name: "Cash",
+    value: 500,
+    income: true,
+  },
+  {
+    id: 1,
+    name: "Book",
+    value: -40,
+    income: false,
+  },
+  {
+    id: 2,
+    name: "Camera",
+    value: -200,
+    income: false,
+  },
+];
+
+function setDefaultData() {
+  const data = JSON.parse(localStorage.getItem("data"));
+  return data ? data : dataDB;
+}
+
 function App() {
-  const [data, setData] = useState([
-    {
-      id: 0,
-      name: "Cash",
-      value: 500,
-      income: true,
-    },
-    {
-      id: 1,
-      name: "Book",
-      value: -40,
-      income: false,
-    },
-    {
-      id: 2,
-      name: "Camera",
-      value: -200,
-      income: false,
-    },
-  ]);
+  const [data, setData] = useState(setDefaultData());
 
   const [text, setText] = useState("");
   const [value, setValue] = useState("");
@@ -62,29 +69,38 @@ function App() {
     setData(newData);
   };
 
+  const handleSubmit = (event) => {
+    event.preventDefault();
+
+    if (text.length && value.length > 0) {
+      let id = data.length + 1;
+      let name = text;
+      let price = +value;
+      let income = false;
+      if (price > 0) {
+        income = true;
+        setIncome(onIncome + price);
+      } else {
+        income = false;
+        setExpence(onExpense + price);
+      }
+      setBalance(balance + price);
+      setData([...data, { id: id, name: name, value: price, income: income }]);
+    }
+
+    setText("");
+    setValue("");
+  };
+
   useEffect(() => {
     setBalance(summ);
     setExpence(handleExpense);
     setIncome(handleIncome);
   }, []);
 
-  const handleSubmit = (event) => {
-    event.preventDefault();
-
-    let id = data.length + 1;
-    let name = text;
-    let price = +value;
-    let income = false;
-    if (price > 0) {
-      income = true;
-      setIncome(onIncome + price);
-    } else {
-      income = false;
-      setExpence(onExpense + price);
-    }
-    setBalance(balance + price);
-    setData([...data, { id: id, name: name, value: price, income: income }]);
-  };
+  useEffect(() => {
+    localStorage.setItem("data", JSON.stringify(data));
+  }, [data]);
 
   return (
     <div className="App container">

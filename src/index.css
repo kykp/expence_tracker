@@ -79,18 +79,12 @@ body {
   position: relative;
 }
 
-
-/* .history__button_disabled {
-  display: none;
-} */
-
 .history__button {
   display: none;
- 
 }
 
 .history__item:hover > .history__button {
-  display: block;
+  display: inline-block;
   position: absolute;
   top: 13px;
   right: -22px;
