@@ -6,19 +6,16 @@ const dataDB = [
     id: 0,
     name: "Cash",
     value: 500,
-    income: true,
   },
   {
     id: 1,
     name: "Book",
     value: -40,
-    income: false,
   },
   {
     id: 2,
     name: "Camera",
     value: -200,
-    income: false,
   },
 ];
 
@@ -76,16 +73,15 @@ function App() {
       let id = data.length + 1;
       let name = text;
       let price = +value;
-      let income = false;
+
       if (price > 0) {
-        income = true;
         setIncome(onIncome + price);
       } else {
-        income = false;
+
         setExpence(onExpense + price);
       }
       setBalance(balance + price);
-      setData([...data, { id: id, name: name, value: price, income: income }]);
+      setData([...data, { id: id, name: name, value: price}]);
     }
 
     setText("");
