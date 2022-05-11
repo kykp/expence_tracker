@@ -166,9 +166,3 @@ input:focus, textarea:focus, select:focus {
     width: 95%;
   }
 }
-
-@media  (max-width: 400px) {
-  input {
-    font-size: 20px;
-  }
-}
