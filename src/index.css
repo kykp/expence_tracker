@@ -4,7 +4,10 @@
 * {
   box-sizing: border-box;
 }
-
+ul{
+  margin:0;
+  padding:0;
+}
 p, h3 {
   margin: 0;
   padding: 0;
@@ -76,25 +79,43 @@ body {
   box-shadow: 3px 8px 8px -3px rgba(34, 60, 80, 0.2);
   background-color: rgba(255, 255, 255, 0.9);
   padding: 10px 20px;
-  position: relative;
-}
-
-.history__button {
-  display: none;
-}
-
-.history__item:hover > .history__button {
-  display: inline-block;
-  position: absolute;
-  top: 13px;
-  right: -22px;
 }
 
 .plus {
-  border-right: 30px solid yellowgreen;
+  border-right: 10px solid yellowgreen;
 }
 .minus {
-  border-right: 30px solid red;
+  border-right: 10px solid red;
+}
+
+.btn:focus,
+.delete-btn:focus {
+  outline: 0;
+}
+
+.history li {
+  position: relative;
+  padding: 10px;
+  margin: 10px 0;
+}
+
+.delete-btn {
+  cursor: pointer;
+  background-color: #000000;
+  border: 0;
+  color: #fff;
+  font-size: 20px;
+  line-height: 20px;
+  padding: 2px 5px;
+  position: absolute;
+  top: 50%;
+  left: 0;
+  transform: translate(-100%, -50%);
+  opacity: 0;
+  transition: opacity 1s ease;
+}
+.history li:hover .delete-btn {
+  opacity: 1;
 }
 
 .transaction__input {
